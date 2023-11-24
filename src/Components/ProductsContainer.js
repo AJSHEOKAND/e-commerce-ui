@@ -4,10 +4,10 @@ import ProductCard from "./ProductCard";
 const ProductsContainer = () => {
   return (
     <>
-      <div className="flex flex-col py-0 px-40 justify-center items-center">
-        <div className="flex w-full px-12 py-0 flex-col items-start gap-12">
-          <div className="flex items-start gap-7 flex-wrap">
-            <ProductCard/>
+      <div className="flex py-0 px-11 flex-col justify-center  xl:flex xl:flex-col xl:py-0 xl:px-40 xl:justify-center xl:items-center">
+        <div className="flex py-20 px-0 flex-col items-center gap-12 xl:flex xl:w-full xl:px-12 xl:py-12 xl:flex-col xl:gap-12">
+          <div className=" xl:flex xl:items-center xl:gap-7 xl:flex-wrap">
+            <ProductCard />
           </div>
         </div>
       </div>
