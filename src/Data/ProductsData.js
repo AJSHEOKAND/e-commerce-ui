@@ -31,18 +31,4 @@ export const product = [
     productMrp: "$16.48",
     productPrice: "$6.48",
   },
-  {
-    image: productImg4,
-    productTitle: "Graphic Design",
-    productCategory: "English Department",
-    productMrp: "$16.48",
-    productPrice: "$6.48",
-  },
-  {
-    image: productImg4,
-    productTitle: "Graphic Design",
-    productCategory: "English Department",
-    productMrp: "$16.48",
-    productPrice: "$6.48",
-  },
 ];
