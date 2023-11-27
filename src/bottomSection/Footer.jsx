@@ -80,6 +80,11 @@ const Footer = () => {
 
         <p className="px-28">Made With Love By Finland All Right Reserved</p>
       </footer>
+
+
+
+
+    
     </>
   );
 };
