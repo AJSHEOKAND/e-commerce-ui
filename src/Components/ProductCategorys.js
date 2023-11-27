@@ -1,6 +1,6 @@
 import React from 'react';
 import arrow from '../Media/icon arrow-right.png';
-import GirlsImagesCategory from '../Data/ProductsCategoryData';
+import ImagesCategory from '../Data/ProductsCategoryData';
 
 const ProductCategory = () => {
   return (
@@ -16,7 +16,7 @@ const ProductCategory = () => {
 
 
       <div className="container mx-auto flex flex-wrap justify-center">
-  {GirlsImagesCategory.map((item, index) => (
+  {ImagesCategory.map((item, index) => (
     <div key={index} className="p-4">
       <div className="rounded-lg overflow-hidden">
         <img

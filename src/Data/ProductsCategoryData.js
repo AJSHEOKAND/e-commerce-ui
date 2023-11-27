@@ -4,11 +4,11 @@ import GirlsSection3 from "../Media/card-cover-7.png"
 import GirlsSection4 from "../Media/card-cover-8.png"
 
 
-const GirlsImagesCategory =[
+const ImagesCategory =[
     {image:GirlsSection1, wear:"CLOTH",item:"5items"},
     {image:GirlsSection2, wear:"CLOTH",item:"5items"},
     {image:GirlsSection3, wear:"CLOTH",item:"5items"},
     {image:GirlsSection4, wear:"CLOTH",item:"5items"},
   
 ]
-export default GirlsImagesCategory;
+export default ImagesCategory;
