@@ -8,7 +8,7 @@ const ProductCard = () => {
         return (
           <div key={index} className="flex flex-col items-center ">
             <div className="flex flex-col xl:items-start">
-              <img src={item.image} alt="Product" />
+              <img className="w-60 h-72" src={item.image} alt="Product" />
               <div className="flex pt-6 pr-6 pb-9 pl-6 flex-col items-center gap-2 w-full">
                 <div className="text-center text-customColor text-sm font-bold tracking-wide">
                   {item.productTitle}
