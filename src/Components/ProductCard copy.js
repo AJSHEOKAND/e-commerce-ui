@@ -35,56 +35,22 @@
 
 // ProductCard.js
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-
 
 const ProductCard = () => {
   const [products, setProducts] = useState([]);
 
-  const [totalProducts, settotalProducts] = useState(1);
-  const [pageNo, setpageNo] = useState(1);
-  const [maxProducts, setMaxProducts] = useState(3);
-
-  // const getTotalProducts = async () => {
-  //   try {
-  //     const res = await axios.get("http://localhost:8001/api/products/numproducts");
-  //     console.log("total-", res.data);
-  //     settotalProducts(res.data);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   getTotalProducts();
-
-  // }, []);
-
-
-
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-          
-        // const res1 = await axios.get("http://localhost:8001/api/products/numproducts");
-        // console.log("total-", res1.data);
-        // settotalProducts(res1.data);
-        // let page = res1.data/maxProducts;
-        
-        const response = await axios.get("http://localhost:8001/api/products/myproducts", {
-          params: {
-            maxProducts: maxProducts,
-            pageNo: pageNo
-          }
-        });
-
-        const data = await response.data;
+        const response = await fetch("http://localhost:8001/api/products/allproducts");
+        const data = await response.json();
         console.log("Fetched data:", data);
         setProducts(data);
       } catch (error) {
         console.error("Error fetching products:", error);
       }
     };
-    
+
     fetchProducts();
   }, []);
 
