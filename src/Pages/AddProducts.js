@@ -20,11 +20,20 @@ const AddProducts = () => {
   const [toggle, setToggle] = useState(false);
 
   const handleInput = (e) => {
-    const { name, value } = e.target;
-    setProduct((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    const { name, value, type } = e.target;
+
+    if (type === "file") {
+      // Use the File object for file input
+      setProduct((prev) => ({
+        ...prev,
+        [name]: e.target.files[0] || null,
+      }));
+    } else {
+      setProduct((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
   };
   const getCategories = async () => {
     try {
@@ -42,26 +51,27 @@ const AddProducts = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-  formData.append("pname", product.productName);
-  formData.append("desc", product.productDesc);
-  formData.append("price", product.productPrice);
-  formData.append("categoryId", product.productCategory);
-  formData.append("image", product.productImage);
+    formData.append("pname", product.productName);
+    formData.append("desc", product.productDesc);
+    formData.append("price", product.productPrice);
+    formData.append("categoryId", product.productCategory);
+    formData.append("quantity", product.productQuantity);
+    formData.append("image", product.productImage);
 
-  try {
-    const response = await axios.post(
-      "http://localhost:8001/api/products/addproduct",
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
-    console.log(response);
-  } catch (error) {
-    console.log(error);
-  }
+    try {
+      const response = await axios.post(
+        "http://localhost:8001/api/products/addproduct",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
     setProduct({
       productName: "",
       productCategory: "",
@@ -121,6 +131,7 @@ const AddProducts = () => {
           <form
             action=""
             className="flex flex-col bg-white w-full p-5 rounded-2xl"
+            encType="multipart/form-data" // Add enctype attribute
           >
             <table className="border-separate border-spacing-4">
               <tbody>
@@ -221,10 +232,12 @@ const AddProducts = () => {
                   <td className="grid lg:table-cell">Product Images</td>
                   <td className="grid lg:table-cell">
                     <input
-                      value={product.productImage}
                       onChange={handleInput}
                       type="file"
-                      name="productImage"
+                      
+                     name="productImage"
+                      
+                      
                       id=""
                     />
                   </td>
