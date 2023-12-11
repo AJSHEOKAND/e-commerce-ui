@@ -57,7 +57,7 @@ const ProductCard = () => {
 
   return (
     <>
-    <p>{pageNo}</p>
+    {/* <p>{pageNo}</p> */}
       {products.map((item, index) => {
         return (
           <div key={index} className="flex flex-col items-center ">
