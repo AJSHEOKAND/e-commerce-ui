@@ -1,27 +1,30 @@
 import React from "react";
 
-import Footer from "./bottomSection/Footer";
+import Footer from "./Components/Footer";
 
 import ProductsContainer from "./Components/ProductsContainer";
 import ProductsFilter from "./Components/ProductsFilter";
 import Pagination from "./Components/Pagination";
 import DesktopClients from "./Components/DesktopClients";
 import ProductCategory from "./Components/ProductCategorys";
+import SingleProduct from "./Components/SingleProduct";
+// import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-const App = () => {
+const Home = () => {
   return (
     <>
-    
-      
-      <ProductCategory/>
+      <ProductCategory />
       <ProductsFilter />
       <ProductsContainer />
       <Pagination />
       <DesktopClients />
-      <Footer/>
+      <Footer />
+      <SingleProduct/>
 
+     
     </>
   );
 };
 
-export default App;
+export default Home;
+
