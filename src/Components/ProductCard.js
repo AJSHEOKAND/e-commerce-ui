@@ -1,5 +1,6 @@
 // ProductCard.js
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 const ProductCard = () => {
   const [products, setProducts] = useState([]);
 
@@ -32,12 +33,9 @@ const ProductCard = () => {
             />
 
             <div className="flex pt-6 pr-6 pb-9 pl-6 flex-col items-center gap-2 w-72">
-              <div className=" text-customColor text-center text-sm font-bold tracking-wide truncate w-full">
+              <Link to="/product" className=" text-customColor text-center text-sm font-bold tracking-wide truncate w-full">
                 {item.pname}
-              </div>
-              {/* <div className="truncate w-full text-center text-customColor2 text-sm font-bold tracking-wide">
-                {item.desc}
-              </div> */}
+              </Link>
               <div className="flex gap-1 items-start px-1 py-1">
                 <div className="text-gray-400">Rs. {item.price}/-</div>
               </div>
