@@ -1,5 +1,6 @@
 import React from "react";
 import AddProducts from "./Pages/AddProducts";
+import SingleProduct from "./Components/SingleProduct";
 import { Route, Routes } from "react-router";
 import HomePage from "./Pages/HomePage";
 import Navbar from "./Components/Navbar";
