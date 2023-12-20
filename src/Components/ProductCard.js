@@ -1,6 +1,7 @@
 // ProductCard.js
 import React, { useState, useEffect } from "react";
 import { FaShoppingCart, FaTag } from "react-icons/fa";
+import { Link } from "react-router-dom";
 const ProductCard = () => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
   const [products, setProducts] = useState([]);
@@ -47,9 +48,9 @@ const ProductCard = () => {
               </div>
             </div>
             <div className="flex pt-6 pr-6 pb-9 pl-6 flex-col items-center gap-2 w-72">
-              <div className=" text-customColor text-center text-sm font-bold tracking-wide truncate w-full">
+              <Link className=" text-customColor text-center text-sm font-bold tracking-wide truncate w-full">
                 {item.pname}
-              </div>
+              </Link>
               {/* <div className="truncate w-full text-center text-customColor2 text-sm font-bold tracking-wide">
                 {item.desc}
               </div> */}
